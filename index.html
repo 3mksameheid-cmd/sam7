@@ -76,12 +76,26 @@
             object-fit: cover;
         }
 
+        .profile-name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
         .profile-name {
             font-size: 28px;
             font-weight: 700;
             color: var(--title-color);
             letter-spacing: 1px;
-            margin-bottom: 8px;
+        }
+
+        /* شارة التوثيق الاحترافية */
+        .verified-badge {
+            color: #1d9bf0;
+            font-size: 22px;
+            text-shadow: 0 0 10px rgba(29, 155, 240, 0.5);
         }
 
         .profile-bio {
@@ -144,7 +158,7 @@
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* تأثيرات الـ Hover الاحترافية لكل منصة */
+        /* تأثيرات الـ Hover الاحترافية */
         .custom-link:hover {
             transform: scale(1.02);
             background: rgba(31, 40, 51, 0.8);
@@ -157,28 +171,34 @@
             opacity: 1;
         }
 
-        /* الستايل المثبت والمميز لقناة الواتساب */
-        .pinned-whatsapp {
-            border: 2px solid #25d366 !important;
-            background: rgba(37, 211, 102, 0.1) !important;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.15);
+        /* ستايل الروابط المثبتة المميزة (Pinned) */
+        .pinned-link {
             position: relative;
             overflow: hidden;
+            background: rgba(255, 255, 255, 0.02) !important;
         }
         
+        .pinned-link-kick { border: 2px solid #53fc18 !important; box-shadow: 0 0 15px rgba(83, 252, 24, 0.15); }
+        .pinned-link-whatsapp { border: 2px solid #25d366 !important; box-shadow: 0 0 15px rgba(37, 211, 102, 0.15); }
+        .pinned-link-store { border: 2px solid #00ffcc !important; box-shadow: 0 0 15px rgba(0, 255, 204, 0.15); }
+
         .pinned-badge {
             font-size: 11px;
-            background: #25d366;
-            color: #000;
             padding: 2px 8px;
             border-radius: 8px;
             font-weight: bold;
             margin-right: auto;
             margin-left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
+        .badge-kick { background: #53fc18; color: #000; }
+        .badge-whatsapp { background: #25d366; color: #000; }
+        .badge-store { background: #00ffcc; color: #000; }
 
-        /* ألوان التوهج الخاصة بالمنصات */
-        .link-kick:hover { border-color: #53fc18; box-shadow: 0 0 15px rgba(83, 252, 24, 0.2); }
+        /* ألوان التوهج الخاصة بالمنصات عند الـ Hover */
+        .link-kick:hover { border-color: #53fc18; box-shadow: 0 0 25px rgba(83, 252, 24, 0.4); }
         .link-tiktok:hover { border-color: #ff0050; box-shadow: 0 0 15px rgba(255, 0, 80, 0.2); }
         .link-youtube:hover { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.2); }
         .link-instagram:hover { border-color: #e1306c; box-shadow: 0 0 15px rgba(225, 48, 108, 0.2); }
@@ -186,7 +206,7 @@
         .link-whatsapp:hover { border-color: #25d366; box-shadow: 0 0 25px rgba(37, 211, 102, 0.4); }
         .link-facebook:hover { border-color: #1877f2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.2); }
         .link-support:hover { border-color: #ffaa00; box-shadow: 0 0 15px rgba(255, 170, 0, 0.3); }
-        .link-store:hover { border-color: #00ffcc; box-shadow: 0 0 15px rgba(0, 255, 204, 0.3); }
+        .link-store:hover { border-color: #00ffcc; box-shadow: 0 0 25px rgba(0, 255, 204, 0.4); }
 
         /* تذييل الصفحة */
         .footer {
@@ -205,32 +225,45 @@
         
         <div class="profile-card">
             <img src="logo.png" alt="MarceloAR" class="profile-logo">
-            <h1 class="profile-name">MarceloAR</h1>
+            <div class="profile-name-container">
+                <h1 class="profile-name">MarceloAR</h1>
+                <i class="fa-solid fa-circle-check verified-badge" title="حساب موثق"></i>
+            </div>
             <p class="profile-bio">Streamer & Content Creator</p>
         </div>
 
-        <div class="section-title">إعلان مثبت</div>
+        <div class="section-title">روابط مثبتة وهامة</div>
         <div class="links-grid">
-            <a href="https://www.whatsapp.com/channel/0029Vb1wFn7ICVfgGiA3Ce2O" class="custom-link link-whatsapp pinned-whatsapp" target="_blank">
+            <a href="https://kick.com/sam7gg" class="custom-link link-kick pinned-link pinned-link-kick" target="_blank">
+                <div class="link-content">
+                    <i class="fa-brands fa-kickstarter" style="color: #53fc18;"></i>
+                    <span>اللايف الأساسي هنا 🚀</span>
+                </div>
+                <span class="pinned-badge badge-kick"><i class="fa-solid fa-thumbtack"></i> مثبت</span>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://www.whatsapp.com/channel/0029Vb1wFn7ICVfgGiA3Ce2O" class="custom-link link-whatsapp pinned-link pinned-link-whatsapp" target="_blank">
                 <div class="link-content">
                     <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
-                    <span>مهم جدا تبقا موجود هنا ✨</span>
+                    <span>مهم جداً ✨</span>
                 </div>
-                <span class="pinned-badge"><i class="fa-solid fa-thumbtack"></i> مثبت</span>
+                <span class="pinned-badge badge-whatsapp"><i class="fa-solid fa-thumbtack"></i> هام</span>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://store.fastlightgames.com/author/marcelogames/" class="custom-link link-store pinned-link pinned-link-store" target="_blank">
+                <div class="link-content">
+                    <i class="fa-solid fa-gamepad" style="color: #00ffcc;"></i>
+                    <span>موقع ومتجر الألعاب المميز 🎮</span>
+                </div>
+                <span class="pinned-badge badge-store"><i class="fa-solid fa-star"></i> متجرنا</span>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
         </div>
 
-        <div class="section-title">منصات البث والمحتوى</div>
+        <div class="section-title">منصات المحتوى</div>
         <div class="links-grid">
-            <a href="https://kick.com/sam7gg" class="custom-link link-kick" target="_blank">
-                <div class="link-content">
-                    <i class="fa-brands fa-kickstarter" style="color: #53fc18;"></i>
-                    <span>قناة Kick الرسمية (sam7gg)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
-
             <a href="https://www.tiktok.com/@sam7.gg" class="custom-link link-tiktok" target="_blank">
                 <div class="link-content">
                     <i class="fa-brands fa-tiktok" style="color: #ff0050;"></i>
@@ -248,20 +281,12 @@
             </a>
         </div>
 
-        <div class="section-title">الدعم والمتجر الرسمي</div>
+        <div class="section-title">الدعم المادي</div>
         <div class="links-grid">
             <a href="https://tikalert-eg.com/ma6selo" class="custom-link link-support" target="_blank">
                 <div class="link-content">
                     <i class="fa-solid fa-heart" style="color: #ffaa00;"></i>
                     <span>رابط الدعم المادي الرسمي (TikAlert)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
-
-            <a href="https://store.fastlightgames.com/author/marcelogames/" class="custom-link link-store" target="_blank">
-                <div class="link-content">
-                    <i class="fa-solid fa-gamepad" style="color: #00ffcc;"></i>
-                    <span>موقع ومتجر الألعاب المميز</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
