@@ -12,7 +12,7 @@
             --bg-color: #0b0c10;
             --secondary-bg: #1f2833;
             --primary-glow: #00ffcc;
-            --text-color: #c5c6c7;
+            --text-color: #e0e1dd;
             --title-color: #ffffff;
         }
 
@@ -128,22 +128,23 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(31, 40, 51, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.03);
             padding: 18px 25px;
             border-radius: 16px;
-            color: var(--title-color);
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 16px;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
         }
 
         .custom-link i {
             font-size: 22px;
             width: 30px;
             text-align: center;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .link-content {
@@ -154,16 +155,15 @@
 
         .arrow-icon {
             font-size: 12px;
-            opacity: 0.3;
+            opacity: 0.7;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* تأثيرات الـ Hover الاحترافية */
+        /* تأثيرات الـ Hover العام */
         .custom-link:hover {
-            transform: scale(1.02);
-            background: rgba(31, 40, 51, 0.8);
-            border-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transform: scale(1.025);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+            color: #ffffff;
         }
 
         .custom-link:hover .arrow-icon {
@@ -171,20 +171,12 @@
             opacity: 1;
         }
 
-        /* ستايل الروابط المثبتة المميزة (Pinned) */
-        .pinned-link {
-            position: relative;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.02) !important;
-        }
-        
-        .pinned-link-kick { border: 2px solid #53fc18 !important; box-shadow: 0 0 15px rgba(83, 252, 24, 0.15); }
-        .pinned-link-whatsapp { border: 2px solid #25d366 !important; box-shadow: 0 0 15px rgba(37, 211, 102, 0.15); }
-        .pinned-link-store { border: 2px solid #00ffcc !important; box-shadow: 0 0 15px rgba(0, 255, 204, 0.15); }
-
+        /* شارات التثبيت الهامة */
         .pinned-badge {
             font-size: 11px;
-            padding: 2px 8px;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            padding: 3px 8px;
             border-radius: 8px;
             font-weight: bold;
             margin-right: auto;
@@ -192,21 +184,63 @@
             display: flex;
             align-items: center;
             gap: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .badge-kick { background: #53fc18; color: #000; }
-        .badge-whatsapp { background: #25d366; color: #000; }
-        .badge-store { background: #00ffcc; color: #000; }
 
-        /* ألوان التوهج الخاصة بالمنصات عند الـ Hover */
-        .link-kick:hover { border-color: #53fc18; box-shadow: 0 0 25px rgba(83, 252, 24, 0.4); }
-        .link-tiktok:hover { border-color: #ff0050; box-shadow: 0 0 15px rgba(255, 0, 80, 0.2); }
-        .link-youtube:hover { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.2); }
-        .link-instagram:hover { border-color: #e1306c; box-shadow: 0 0 15px rgba(225, 48, 108, 0.2); }
-        .link-discord:hover { border-color: #5865f2; box-shadow: 0 0 15px rgba(88, 101, 242, 0.2); }
-        .link-whatsapp:hover { border-color: #25d366; box-shadow: 0 0 25px rgba(37, 211, 102, 0.4); }
-        .link-facebook:hover { border-color: #1877f2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.2); }
-        .link-support:hover { border-color: #ffaa00; box-shadow: 0 0 15px rgba(255, 170, 0, 0.3); }
-        .link-store:hover { border-color: #00ffcc; box-shadow: 0 0 25px rgba(0, 255, 204, 0.4); }
+        /* تخصيص الألوان الرسمية لكل منصة بشكل ثابت وثري */
+        .link-kick {
+            background: linear-gradient(135deg, #1f2023, #05cc47);
+            border-color: #53fc18;
+            box-shadow: 0 4px 15px rgba(83, 252, 24, 0.2);
+        }
+        
+        .link-whatsapp {
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            border-color: #25d366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .link-support {
+            background: linear-gradient(135deg, #b87333, #ffaa00);
+            border-color: #ffcc00;
+            box-shadow: 0 4px 15px rgba(255, 170, 0, 0.2);
+        }
+
+        .link-store {
+            background: linear-gradient(135deg, #0f172a, #00b4d8);
+            border-color: #00ffcc;
+            box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+        }
+
+        .link-tiktok {
+            background: linear-gradient(135deg, #000000, #111111);
+            border-color: #ff0050;
+            box-shadow: -2px 2px 10px rgba(255, 0, 80, 0.3), 2px -2px 10px rgba(0, 242, 254, 0.3);
+        }
+
+        .link-youtube {
+            background: linear-gradient(135deg, #990000, #ff0000);
+            border-color: #ff3333;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .link-discord {
+            background: linear-gradient(135deg, #404eed, #5865f2);
+            border-color: #5865f2;
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.2);
+        }
+
+        .link-instagram {
+            background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            border-color: #e1306c;
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.2);
+        }
+
+        .link-facebook {
+            background: linear-gradient(135deg, #064b91, #1877f2);
+            border-color: #1877f2;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.2);
+        }
 
         /* تذييل الصفحة */
         .footer {
@@ -227,37 +261,46 @@
             <img src="logo.png" alt="MarceloAR" class="profile-logo">
             <div class="profile-name-container">
                 <h1 class="profile-name">MarceloAR</h1>
-                <i class="fa-solid fa-circle-check verified-badge" title="حساب موثق"></i>
+                <i class="fa-solid fa-circle-check verified-badge" title="حساب موثق رسمي"></i>
             </div>
             <p class="profile-bio">Streamer & Content Creator</p>
         </div>
 
         <div class="section-title">روابط مثبتة وهامة</div>
         <div class="links-grid">
-            <a href="https://kick.com/sam7gg" class="custom-link link-kick pinned-link pinned-link-kick" target="_blank">
+            <a href="https://kick.com/sam7gg" class="custom-link link-kick" target="_blank">
                 <div class="link-content">
-                    <i class="fa-brands fa-kickstarter" style="color: #53fc18;"></i>
-                    <span>اللايف الأساسي هنا 🚀</span>
+                    <i class="fa-brands fa-kickstarter" style="color: #ffffff;"></i>
+                    <span>MarceloAR | اللايف الأساسي هنا 🚀</span>
                 </div>
-                <span class="pinned-badge badge-kick"><i class="fa-solid fa-thumbtack"></i> مثبت</span>
+                <span class="pinned-badge"><i class="fa-solid fa-thumbtack"></i> مباشر</span>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
 
-            <a href="https://www.whatsapp.com/channel/0029Vb1wFn7ICVfgGiA3Ce2O" class="custom-link link-whatsapp pinned-link pinned-link-whatsapp" target="_blank">
+            <a href="https://www.whatsapp.com/channel/0029Vb1wFn7ICVfgGiA3Ce2O" class="custom-link link-whatsapp" target="_blank">
                 <div class="link-content">
-                    <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
-                    <span>مهم جداً ✨</span>
+                    <i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i>
+                    <span>قناة الواتساب مهمة جداً ✨</span>
                 </div>
-                <span class="pinned-badge badge-whatsapp"><i class="fa-solid fa-thumbtack"></i> هام</span>
+                <span class="pinned-badge"><i class="fa-solid fa-bell"></i> هام</span>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
 
-            <a href="https://store.fastlightgames.com/author/marcelogames/" class="custom-link link-store pinned-link pinned-link-store" target="_blank">
+            <a href="https://tikalert-eg.com/ma6selo" class="custom-link link-support" target="_blank">
                 <div class="link-content">
-                    <i class="fa-solid fa-gamepad" style="color: #00ffcc;"></i>
+                    <i class="fa-solid fa-heart" style="color: #ffffff;"></i>
+                    <span>الدعم المادي ❤️</span>
+                </div>
+                <span class="pinned-badge"><i class="fa-solid fa-circle-dollar-to-slot"></i> دعم</span>
+                <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://store.fastlightgames.com/author/marcelogames/" class="custom-link link-store" target="_blank">
+                <div class="link-content">
+                    <i class="fa-solid fa-gamepad" style="color: #ffffff;"></i>
                     <span>موقع ومتجر الألعاب المميز 🎮</span>
                 </div>
-                <span class="pinned-badge badge-store"><i class="fa-solid fa-star"></i> متجرنا</span>
+                <span class="pinned-badge"><i class="fa-solid fa-star"></i> متجرنا</span>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
         </div>
@@ -266,7 +309,7 @@
         <div class="links-grid">
             <a href="https://www.tiktok.com/@sam7.gg" class="custom-link link-tiktok" target="_blank">
                 <div class="link-content">
-                    <i class="fa-brands fa-tiktok" style="color: #ff0050;"></i>
+                    <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
                     <span>حساب TikTok الرئيسي</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
@@ -274,19 +317,8 @@
 
             <a href="https://www.youtube.com/@Same7gg" class="custom-link link-youtube" target="_blank">
                 <div class="link-content">
-                    <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
+                    <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
                     <span>قناة YouTube الرسمية</span>
-                </div>
-                <i class="fa-solid fa-chevron-left arrow-icon"></i>
-            </a>
-        </div>
-
-        <div class="section-title">الدعم المادي</div>
-        <div class="links-grid">
-            <a href="https://tikalert-eg.com/ma6selo" class="custom-link link-support" target="_blank">
-                <div class="link-content">
-                    <i class="fa-solid fa-heart" style="color: #ffaa00;"></i>
-                    <span>رابط الدعم المادي الرسمي (TikAlert)</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
             </a>
@@ -296,7 +328,7 @@
         <div class="links-grid">
             <a href="https://discord.com/invite/rSEutSnXzj" class="custom-link link-discord" target="_blank">
                 <div class="link-content">
-                    <i class="fa-brands fa-discord" style="color: #5865f2;"></i>
+                    <i class="fa-brands fa-discord" style="color: #ffffff;"></i>
                     <span>سيرفر Discord (المجتمع)</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
@@ -304,7 +336,7 @@
 
             <a href="https://www.instagram.com/sam7.gg" class="custom-link link-instagram" target="_blank">
                 <div class="link-content">
-                    <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
                     <span>حساب Instagram</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
@@ -312,7 +344,7 @@
 
             <a href="https://www.facebook.com/profile.php?id=61590433569008&rdid=JSf7SCdpGiUEjYXo&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CvCPgoSjS%2F#" class="custom-link link-facebook" target="_blank">
                 <div class="link-content">
-                    <i class="fa-brands fa-facebook" style="color: #1877f2;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
                     <span>صفحة Facebook</span>
                 </div>
                 <i class="fa-solid fa-chevron-left arrow-icon"></i>
